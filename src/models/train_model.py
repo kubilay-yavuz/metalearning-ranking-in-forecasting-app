@@ -50,7 +50,7 @@ def train_ridge(train_df, train_y, valid_df, valid_y):
 def train_lasso(train_df, train_y, valid_df, valid_y):
     model = Lasso(alpha=1)
     model.fit(train_df, train_y)
-    pred = model.predict(valid_df)
+    pred = model.predict(valid_df )
     mse_res, msle_res = np.sqrt(mean_squared_error(pred, valid_y.values)), np.sqrt(
         mean_squared_log_error(pred, valid_y.values))
     print("For Lasso Regression")
